@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Kelompok</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Background gradient */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(-45deg, #1a0000, #330000, #660000, #990000);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      z-index: -2;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    /* Canvas partikel */
+    #particles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      color: #ff3333;
+      text-shadow: 0 0 15px #ff0000, 0 0 30px #ff1a1a;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    .team-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .member-card {
+      background: rgba(20, 0, 0, 0.8);
+      border: 2px solid #ff1a1a;
+      border-radius: 15px;
+      padding: 1.5rem;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .member-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(255, 50, 50, 0.9);
+    }
+
+    .member-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #ff3333;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 20px #ff1a1a;
+    }
+
+    .member-name {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #ff6666;
+    }
+
+    .member-role {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #ffcccc;
+    }
+
+    .portfolio-btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #ff1a1a;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #ff0000;
+    }
+
+    .portfolio-btn:hover {
+      background: #cc0000;
+      box-shadow: 0 0 20px #ff1a1a, 0 0 40px #ff0000;
+    }
+  </style>
+</head>
+<body>
+  <!-- Canvas untuk partikel -->
+  <canvas id="particles"></canvas>
+
+  <header>
+    <h1>Portofolio Kelompok TKJ</h1>
+  </header>
+
+  <section class="team-container">
+    <div class="member-card">
+      <img src="https://i.postimg.cc/NM5cGZfn/5d4f156a14cd72b11694f49db6e71b78.jpg" alt="Anggota 1" class="member-photo">
+      <div class="member-name">Muhammad Fathir Ghiffar Riyadi</div>
+      <div class="member-role">Frontend Developer</div>
+      <a href="Fathir_ghiffar.html" class="portfolio-btn">Lihat Portofolio</a>
+    </div>
+
+     
+    <div class="member-card">
+      <img src="https://i.postimg.cc/NMjQWZVb/Screenshot-20250702-190610.jpg" alt="Anggota 2" class="member-photo">
+      <div class="member name">Muhammad Syaiful Ardhian</div>
+      <div class="member-role">Backend Developer</div>
+      <a href="M_Syaiful.html" class="portfolio-btn">Lihat Portofolio</a>
+    </div>
+
+    <div class="member-card">
+      <img src="https://i.postimg.cc/66v8YZ6Z/1756346811245.jpg" alt="Anggota 3" class="member-photo">
+      <div class="member name">Ali Sukma Jaya</div>
+      <div class="member-role">Network Engineer</div>
+      <a href="ali_sukma.html" class="portfolio-btn">Lihat Portofolio</a>
+    </div>
+
+    <div class="member-card">
+      <img src="https://i.postimg.cc/Ss3B7dx6/IMG-20250828-090945.jpg" alt="Anggota 4" class="member-photo">
+                
+      <div class="member name">Raihan Dwi Ramadhan</div>
+      <div class="member-role">UI/UX Designer</div>
+      <a href="Raihan_Dwi_R.html" class="portfolio-btn">Lihat Portofolio</a>
+    </div>
+
+    <div class="member-card">
+      <img src="https://i.postimg.cc/Twpd5rP5/Snap-Insta-to-539106273-17923992144101402-3362026628379495902-n.jpg" alt="Anggota 5" class="member-photo">
+                
+      <div class="Reihan Dwi Putra">Reihan Dwi Putra</div>
+      <div class="member-role">Security Analyst</div>
+      <a href="Reihan_Dwi_Putra.html" class="portfolio-btn">Lihat Portofolio</a>
+    </div>
+  </section>
+
+  <script>
+    // Partikel animasi
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particlesArray = [];
+    const particleCount = 80;
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = (Math.random() - 0.5) * 1.5;
+        this.speedY = (Math.random() - 0.5) * 1.5;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(255, 0, 0, 0.7)";
+        ctx.shadowColor = "#ff0000";
+        ctx.shadowBlur = 20;
+        ctx.fill();
+      }
+    }
+
+    function init() {
+      for (let i = 0; i < particleCount; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+      }
+      requestAnimationFrame(animate);
+    }
+
+    init();
+    animate();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
